@@ -1,16 +1,25 @@
 // this program will display a help scenario for learning Java
-class Help {
+public class Help2 {
 
   public static void main(String[] args)
     throws java.io.IOException {
 
     char choice, ignore;
 
-    System.out.println("Help on:");
-    System.out.println(" 1. if");
-    System.out.println(" 2. switch");
-    System.out.print("Choose one: ");
-    choice = (char) System.in.read();
+    do {    
+        System.out.println("Help on:");
+        System.out.println(" 1. if");
+        System.out.println(" 2. switch");
+        System.out.println(" 3. for");
+        System.out.println(" 4. while");
+        System.out.println(" 5. do-while");
+        System.out.print("Choose one: ");
+        choice = (char) System.in.read();
+
+        do {
+            ignore = (char) System.in.read();
+        } while (ignore != '\n');
+    } while ( choice < '1' | choice > '5');
 
     System.out.println();
 
@@ -30,9 +39,18 @@ class Help {
         System.out.println("  //...");
         System.out.println("}");
         break;
-      default:
-        System.out.println("Selection not found."); 
+      case '3':
+        System.out.println("The For:\n");
+        System.out.println("for (init; condition; iteration) {statement;}");
+        break;
+      case '4':
+        System.out.println("The While:\n");
+        System.out.println("while (condition) {statement;}");
+        break;
+      case '5':
+        System.out.println("The Do-While:\n");
+        System.out.println("do {statement;} while (condition);");
+        break;
     }
-
   }  
 }
